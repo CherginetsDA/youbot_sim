@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package>
+  <name>youbot_sim</name>
+  <version>0.1.0</version>
+  <description>Kuka youbot simulation</description>
+  <maintainer email="cherginetsda@gmail.com">Cherginets Dmitrii</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+   <export>
+     <metapackage/>
+   </export>
+ </package>

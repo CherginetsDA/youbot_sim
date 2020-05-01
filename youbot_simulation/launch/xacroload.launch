@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+ <arg name="model" />
+ <arg name="param_name" default="robot_description" />
+ <arg name="gui" default="true" />
+ <param name="$(arg param_name)" command="$(find xacro)/xacro --inorder $(arg model)" />
+ <param name="use_gui" value="$(arg gui)"/>
+
+ <node name="rviz" pkg="rviz" type="rviz" args="-d $(find youbot_simulation)/rviz/youbot.rviz" />
+</launch>

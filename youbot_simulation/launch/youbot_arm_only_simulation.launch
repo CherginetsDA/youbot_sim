@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="use_gui" default="true" />
+  <include file="$(find youbot_simulation)/launch/xacroload.launch">
+		<arg name="gui" value="$(arg use_gui)"/>
+		<arg name="model" value="$(find youbot_description)/robots/youbot_arm_only.urdf.xacro"/>
+	</include>
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+</launch>
