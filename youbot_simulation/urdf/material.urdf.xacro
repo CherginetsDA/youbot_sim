@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<robot>
+  <material name="CHECKBOARD">
+    <texture filename="package://youbot_simulation/rviz/checkboard_cam_calib.png" />
+  </material>
+</robot>

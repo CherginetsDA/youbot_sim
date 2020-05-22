@@ -31,6 +31,10 @@
   <xacro:include filename="$(find youbot_description)/urdf/sensors/hokuyo_urg04_laser.urdf.xacro"/>
   <xacro:include filename="$(find youbot_description)/urdf/sensors/microsoft_lifecam.urdf.xacro"/>
 
+  <!-- checkboard -->
+<xacro:include filename="$(find youbot_simulation)/urdf/checkboard.xacro"/>
+<xacro:include filename="$(find youbot_simulation)/urdf/material.urdf.xacro" />
+
   <!-- foot for arm-->
   <xacro:youbot_base name="base"/>
 
@@ -54,7 +58,12 @@
   <!-- sensor camera -->
   <xacro:microsoft_lifecam name="microsoft_lifecam" parent="arm_link_5">
     <origin xyz="-0.048 0 0.001" rpy="0 ${-pi/2} 0" />
+
   </xacro:microsoft_lifecam>
 
+  <!-- checkboard -->
+  <xacro:checkboard name="checkboard" parent="plate_link">
+    <origin xyz="0 0.01 0.025" rpy="0 0 ${-pi/2} " />
+  </xacro:checkboard>
 
 </robot>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<root xmlns:xacro="http://ros.org/wiki/xacro">
+  <property name="side_of_board" value="0.15" />
+
+  <xacro:include filename="$(find youbot_simulation)/urdf/checkboard.gazebo.xacro"/>
+
+  <xacro:macro name="checkboard" params="name parent *origin">
+   <joint name="${name}_joint" type="fixed">
+    <insert_block name="origin" />
+    <parent link="${parent}" />
+    <child link="${name}_link" />
+   </joint>
+
+   <link name="${name}_link">
+    <inertial>
+      <mass value="0.01" />
+      <origin xyz="0 0 0" />
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0"
+        iyy="0.001" iyz="0.0"
+        izz="0.001" />
+    </inertial>
+
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+      <geometry>
+        <box size="${side_of_board * 0.7} ${side_of_board} 0.001"/>
+      </geometry>
+      <material name="CHECKBOARD" />
+    </visual>
+
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+      <geometry>
+         <box size="${side_of_board * 0.7} ${side_of_board} 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- for simulation -->
+  <xacro:gazebo_checkboard name="${name}" />
+
+
+</xacro:macro>
+
+</root>

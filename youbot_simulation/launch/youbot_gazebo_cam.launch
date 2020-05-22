@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <launch>
 
+  <env name="GAZEBO_RESOURCE_PATH" value="$(find youbot_simulation)"/>
+
   <arg name="rviz_file" default="youbot_simulation"/>
   <arg name="world" default="arena"/>
   <arg name="init_pos_x" default="0.0"/>
@@ -11,7 +13,7 @@
   <include file="$(find youbot_simulation)/launch/$(arg world).launch">
     <arg name="gui" value="true"/>
   </include>
-  <arg name="model" value="$$(find youbot_simulation)/urdf/youbot_cam_1.urdf.xacro"/>
+  <arg name="model" value="$(find youbot_simulation)/urdf/youbot_cam_1.urdf.xacro"/>
   <arg name="gui" default="true" />
   <param name="robot_description" command="$(find xacro)/xacro $(find youbot_simulation)/urdf/youbot_cam_1.urdf.xacro" />
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find youbot_simulation)/rviz/youbot_cam.rviz" />

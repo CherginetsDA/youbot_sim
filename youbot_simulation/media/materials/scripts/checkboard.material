@@ -1,0 +1,13 @@
+material youbot/checkboard
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture checkboard_cam_calib.png
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root xmlns:xacro="http://ros.org/wiki/xacro">
+
+<xacro:macro name="gazebo_checkboard" params="name">
+  <gazebo reference="${name}_link">
+    <material>youbot/checkboard</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+</xacro:macro>
+
+</root>
