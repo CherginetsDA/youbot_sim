@@ -42,6 +42,3 @@ target_link_libraries(youbot_gazebo_message_wrapper
 
 add_executable(home src/home.cpp)
 target_link_libraries(home ${catkin_LIBRARIES})
-
-add_executable(kin src/kinumatics_control.cpp)
-target_link_libraries(kin ${catkin_LIBRARIES} ${RL_LIBRARIES} ${EIGEN_LIBRARIES})
